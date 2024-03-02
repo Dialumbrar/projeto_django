@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Clientes
+from .models import Estoque
 
 def index(request):
     return render(request,'index.html')
@@ -7,6 +7,3 @@ def index(request):
 def cadastro(request):
     return render(request, 'cadastro.html')
 
-def listar(request):
-    lista_clientes = Clientes.objects.all()
-    return render(request, 'listar.html', {'lista': lista_clientes})
