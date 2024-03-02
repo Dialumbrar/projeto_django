@@ -11,12 +11,11 @@
                 <th>Preço</th>
                 <th>Estoque Maximo</th>
                 <th>Estoque Minimo</th>
-                <th>Gerenciar</th>
             </tr>
         </thead>
         <tbody>
-            {% if lista %}
-                {% for estoque in lista %}
+            {% if lista_produto %}
+                {% for estoque in lista_produto %}
                     <tr>
                         <td>{{ estoque.nome_produto }}</td>
                         <td>{{ estoque.descricao }}</td>
