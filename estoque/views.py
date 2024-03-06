@@ -8,4 +8,5 @@ def cadastro(request):
     return render(request, 'cadastro.html')
 
 def lista_produto(request):
-    return render(request, 'lista_produto.html')
+    lista_produto = Estoque.objects.all()
+    return render(request, 'lista_produto.html', {'lista_produto': lista_produto})
