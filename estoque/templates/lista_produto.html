@@ -9,8 +9,8 @@
                 <th>Nome do Produto</th>
                 <th>Descrição</th>
                 <th>Preço</th>
-                <th>Estoque Maximo</th>
-                <th>Estoque Minimo</th>
+                <th>Estoque Máximo</th>
+                <th>Estoque Minímo</th>
                 <th>Data de Cadastro</th>
                 <th>Data de Atualização</th>
                 <th>Gerenciar</th>
@@ -28,10 +28,8 @@
                         <td>{{ estoque.created_at }}</td>
                         <td>{{ estoque.updated_at }}</td>
                         <td>
-                            <a href="{% url 'deletar_estoque' estoque.id %}">Excluir</a>
-                        </td>
-                        <td>
                             <a href="{% url 'editar_estoque' estoque.id %}">Editar</a>
+                            <a href="{% url 'deletar_estoque' estoque.id %}">Excluir</a>
                         </td>
                     </tr>
                 {% endfor %}

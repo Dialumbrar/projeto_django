@@ -4,7 +4,7 @@
     <h4>Editar de estoque</h4>
         <form action="{% url 'atualizar_estoque' %}" method="post">
             {% csrf_token %}
-            <imput type="hidden" name="id" value="{{dados_estoque.id}}">
+            <input type="hidden" name="id" value="{{dados_estoque.id}}">
             <div class="row">
                 <div class="col-md-3">
                     <label for="nome_produto">Nome produto</label>

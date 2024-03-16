@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cliente',
-    'bootstrap5',
-    'estoque'
+    'estoque',
+    'usuario',
+    'bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,7 @@ ROOT_URLCONF = 'setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'cliente/templates', 'estoque/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'cliente/templates', 'estoque/templates', 'usuario/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
