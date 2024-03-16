@@ -1,0 +1,33 @@
+{% extends 'master_estoque.html' %}
+
+{% block content %}
+    <h4>Cadastro de estoque</h4>
+        <form action="{% url 'criar_produto' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="nome_produto">Nome produto</label>
+                    <input type="text" name="nome_produto" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" name="descricao">
+                </div>
+                <div class="col-md-3">
+                    <label for="preco">Preço</label>
+                    <input type="number" name="preco">
+                </div>                
+                <div class="col-md-3">
+                    <label for="max_estoque">Estoque Máximo</label>
+                    <input type="number" name="max_estoque">
+                </div>
+                <div class="col-md-3">
+                    <label for="min_estoque">Estoque Minímo</label>
+                    <input type="number" name="min_estoque">
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button class="btn btn-success">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+{% endblock %}

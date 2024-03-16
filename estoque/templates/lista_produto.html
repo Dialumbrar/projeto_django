@@ -1,4 +1,4 @@
-{% extends 'master.html' %}
+{% extends 'master_estoque.html' %}
 
 {% block content %}
     <h4>Lista de produtos</h4>
@@ -11,6 +11,8 @@
                 <th>Preço</th>
                 <th>Estoque Maximo</th>
                 <th>Estoque Minimo</th>
+                <th>Data de Cadastro</th>
+                <th>Data de Atualização</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +22,8 @@
                         <td>{{ estoque.nome_produto }}</td>
                         <td>{{ estoque.descricao }}</td>
                         <td>{{ estoque.preco }}</td>
+                        <td>{{ estoque.max_estoque }}</td>
+                        <td>{{ estoque.min_estoque }}</td>
                         <td>{{ estoque.created_at }}</td>
                         <td>{{ estoque.updated_at }}</td>
                         <td></td>
