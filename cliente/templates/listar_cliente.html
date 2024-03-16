@@ -1,4 +1,4 @@
-{% extends 'master.html' %}
+{% extends 'master_cliente.html' %}
 
 {% block content %}
     <h4>Lista de Clientes</h4>
@@ -11,6 +11,7 @@
                 <th>Situação</th>
                 <th>Data de Cadastro</th>
                 <th>Data de Atualização</th>
+                <th>Gerenciar</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +23,12 @@
                         <td>{{ cliente.status }}</td>
                         <td>{{ cliente.created_at }}</td>
                         <td>{{ cliente.updated_at }}</td>
-                        <td></td>
+                        <td>
+                            <a href="{% url 'deletar_cliente' cliente.id %}">Excluir</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'editar_cliente' cliente.id %}">Editar</a>
+                        </td>
                     </tr>
                 {% endfor %}
             {% else %}

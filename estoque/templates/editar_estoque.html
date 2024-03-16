@@ -1,32 +1,33 @@
 {% extends 'master_estoque.html' %}
 
 {% block content %}
-    <h4>Cadastro de estoque</h4>
-        <form action="{% url 'criar_produto' %}" method="post">
+    <h4>Editar de estoque</h4>
+        <form action="{% url 'atualizar_estoque' %}" method="post">
             {% csrf_token %}
+            <imput type="hidden" name="id" value="{{dados_estoque.id}}">
             <div class="row">
                 <div class="col-md-3">
                     <label for="nome_produto">Nome produto</label>
-                    <input type="text" name="nome_produto" class="form-control">
+                    <input type="text" name="nome_produto" class="form-control" value="{{dados_estoque.nome_produto}}">
                 </div>
                 <div class="col-md-3">
                     <label for="descricao">Descrição</label>
-                    <input type="text" name="descricao">
+                    <input type="text" name="descricao" class="form-control" value="{{dados_estoque.descricao}}">
                 </div>
                 <div class="col-md-3">
                     <label for="preco">Preço</label>
-                    <input type="number" name="preco">
+                    <input type="number" name="preco" class="form-control" value="{{dados_estoque.preco}}">
                 </div>                
                 <div class="col-md-3">
                     <label for="max_estoque">Estoque Máximo</label>
-                    <input type="number" name="max_estoque">
+                    <input type="number" name="max_estoque" class="form-control" value="{{dados_estoque.max_estoque}}">
                 </div>
                 <div class="col-md-3">
                     <label for="min_estoque">Estoque Minímo</label>
-                    <input type="number" name="min_estoque">
+                    <input type="number" name="min_estoque" class="form-control" value="{{dados_estoque.min_estoque}}">
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button class="btn btn-success">Cadastrar</button>
+                    <button class="btn btn-success">Atualizar</button>
                 </div>
             </div>
         </form>

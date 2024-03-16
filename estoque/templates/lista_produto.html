@@ -13,6 +13,7 @@
                 <th>Estoque Minimo</th>
                 <th>Data de Cadastro</th>
                 <th>Data de Atualização</th>
+                <th>Gerenciar</th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +27,12 @@
                         <td>{{ estoque.min_estoque }}</td>
                         <td>{{ estoque.created_at }}</td>
                         <td>{{ estoque.updated_at }}</td>
-                        <td></td>
+                        <td>
+                            <a href="{% url 'deletar_estoque' estoque.id %}">Excluir</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'editar_estoque' estoque.id %}">Editar</a>
+                        </td>
                     </tr>
                 {% endfor %}
             {% else %}

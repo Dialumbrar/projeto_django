@@ -17,18 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-#from cliente import views as cliente_views
-#from estoque import views as estoque_views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    #path('', cliente_views.index, name = 'index'),
-    #path('cadastro', cliente_views.cadastro, name = 'cadastro'),
-    #path('listar', cliente_views.listar, name = 'listar'),
-    path('', include('cliente.urls')),
-    path('', include('estoque.urls'))
-    #path('', estoque_views.index, name = 'index'),
-    #path('cadastro', estoque_views.cadastro, name = 'cadastro'),
-    #path('lista_produto', estoque_views.lista_produto, name = 'lista_produto')
-       
+    path('admin/', admin.site.urls), 
+    path('cliente/', include('cliente.urls')),
+    path('estoque/', include('estoque.urls')), 
 ]
